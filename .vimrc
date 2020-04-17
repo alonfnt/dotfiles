@@ -82,7 +82,7 @@ autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview"
 
 " Call the vimrc.plug file with the plugins
-if filereadable(expand("~/.vimplug/vimrc.plug"))
-  source ~/.vimplug/vimrc.plug
+if filereadable(expand("~/.vimrc.plug"))
+  source ~/.vimrc.plug
 endif
 
