@@ -74,7 +74,7 @@ if ${use_color} ; then
 	else
         # Remove the user and machine name
 		# PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
-		PS1='\[\033[01;32m\]\[\033[01;37m\]\W\[\033[01;32m\] \$\[\033[00m\] '
+		PS1='\[\033[01;32m\]\[\033[01;37m\]\W\[\033[01;32m\] >\[\033[00m\] '
 	fi
 
 	alias ls='ls --color=auto'
@@ -142,6 +142,8 @@ ex ()
 
 # Display the current directory as the terminal title
 # PROMPT_COMMAND='echo -ne "\033]0;${PWD}\007"'
+
+# Display nothing as the title
 PROMPT_COMMAND='echo -ne "\033]0; \007"'
 
 
