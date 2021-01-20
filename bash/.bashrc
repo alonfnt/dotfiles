@@ -12,6 +12,9 @@ then
 fi
 export PATH
 
+# Custom prompt
+export PS1='\h:\W \u $ '
+
 # Declutter HOME
 export ANDROID_SDK_HOME=$XDG_CONFIG_HOME/android
 export ANDROID_PREFS_ROOT="$XDG_CONFIG_HOME"/android
