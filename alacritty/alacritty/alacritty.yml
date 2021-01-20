@@ -1,0 +1,11 @@
+window:
+  gtk_theme_variant: 'dark'
+  padding:
+    x: 4
+    y: 4
+
+font:
+  normal:
+    family: FiraCode
+  size: 13
+  use_thin_strokes: true
