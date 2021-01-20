@@ -6,7 +6,6 @@
 " TextEdit might fail if hidden is not set.
 set hidden
 
-
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
@@ -30,6 +29,7 @@ else
   set signcolumn=yes
 endif
 
+set signcolumn=no
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.

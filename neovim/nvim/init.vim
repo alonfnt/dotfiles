@@ -24,6 +24,7 @@ set hidden
 set splitbelow
 set splitright
 set autochdir
+set signcolumn=no
 
 set hlsearch 
 set incsearch 

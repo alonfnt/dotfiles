@@ -10,19 +10,9 @@ Plug 'junegunn/goyo.vim' " Distraction free
 "Plug 'vim-airline/vim-airline' " Cool statusbar
 Plug 'rhysd/clever-f.vim' " Find the next ocurrance
 Plug 'manasthakur/vim-commentor' " Enhanced gcc comment
-Plug 'christoomey/vim-conflicted' " Use :Confliced to solve git conflictions
-Plug 'tpope/vim-fugitive' " Incorporates git into the command line.
+"Plug 'christoomey/vim-conflicted' " Use :Confliced to solve git conflictions
+"Plug 'tpope/vim-fugitive' " Incorporates git into the command line.
 "Plug 'airblade/vim-gitgutter' " Shows Git changes.
-" Colorschemes-------------------- 
-Plug 'morhetz/gruvbox' " Gruvbox Colorscheme
-Plug 'google/vim-colorscheme-primary' " Google Colorscheme
-Plug 'jaredgorski/spacecamp' " Space Colorscheme
-Plug 'ayu-theme/ayu-vim'
-Plug 'sonph/onehalf', { 'rtp': 'vim' } 
-Plug 'kkga/vim-envy'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'humanoid-colors/vim-humanoid-colorscheme'
-Plug 'rakr/vim-one'
 " LateX--------------------
 "Plug 'lervag/vimtex'
 "Plug 'vim-latex/vim-latex'
@@ -33,7 +23,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " C/C++---------------------
 Plug 'vim-scripts/a.vim' " Switch between .h and .c
 " Templates-----------------
-Plug 'tibabit/vim-templates' " Starts document with template.
+"Plug 'tibabit/vim-templates' " Starts document with template.
 " Autocomplete --
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
