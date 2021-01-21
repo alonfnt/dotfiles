@@ -10,9 +10,9 @@ Plug 'junegunn/goyo.vim' " Distraction free
 "Plug 'vim-airline/vim-airline' " Cool statusbar
 Plug 'rhysd/clever-f.vim' " Find the next ocurrance
 Plug 'manasthakur/vim-commentor' " Enhanced gcc comment
-"Plug 'christoomey/vim-conflicted' " Use :Confliced to solve git conflictions
-"Plug 'tpope/vim-fugitive' " Incorporates git into the command line.
-"Plug 'airblade/vim-gitgutter' " Shows Git changes.
+Plug 'christoomey/vim-conflicted' " Use :Confliced to solve git conflictions
+Plug 'tpope/vim-fugitive' " Incorporates git into the command line.
+Plug 'airblade/vim-gitgutter' " Shows Git changes.
 " LateX--------------------
 "Plug 'lervag/vimtex'
 "Plug 'vim-latex/vim-latex'
