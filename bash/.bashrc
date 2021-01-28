@@ -29,7 +29,7 @@ export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export XSERVERRC="$XDG_CONFIG_HOME"/X11/xserverrc
 
 export BASH_COMPLETION_USER_FILE="$XDG_CONFIG_HOME"/bash/bash_completion
-export HISTFILE="$XDG_DATA_HOME"/bash/history
+#export HISTFILE="$XDG_DATA_HOME"/bash/history
 
 alias nvidia-settings='nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings'
 
@@ -53,15 +53,9 @@ alias md='mkdir'
 alias cl='clear'
 alias du='du -ch --max-depth=1'
 alias treeacl='tree -A -C -L 2'
-
+alias todo='todo.sh '
 # Stop the terminal from quiting when Ctrl+D is pressed
 set -o ignoreeof
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/albert/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/albert/Downloads/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/albert/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/albert/Downloads/google-cloud-sdk/completion.bash.inc'; fi
 
 # No noise on bell
 set bell-style visible
@@ -69,3 +63,9 @@ set bell-style visible
 # Defaults
 export EDITOR=nvim
 export TERMINAL=alacritty
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/albert/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/albert/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/albert/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/albert/Downloads/google-cloud-sdk/completion.bash.inc'; fi
