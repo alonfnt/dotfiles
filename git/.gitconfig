@@ -1,0 +1,21 @@
+[user]
+	email = alonfnt@pm.me
+	name = Albert Alonso
+[push]
+	default = simple
+[credential]
+	helper = store
+[commit]
+	gpgsign = true
+[diff "hex"]
+	textconv = xxd
+	binary = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	process = git-lfs filter-process
+	smudge = git-lfs smudge -- %f
+	required = true
+[diff]
+	tool = meld
+[pull]
+	rebase = false
