@@ -5,33 +5,24 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+shopt -s histappend
+
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
 then
     PATH=":$HOME/.local/bin:$HOME/bin:$PATH"
 fi
+
+# Add poetry if installed in the system
+if [ -f "$HOME/.poetry" ]; then
+	echo "IT exists!!"
+	PATH="$HOME/.poetry/bin:$PATH"
+fi
+PATH="$HOME/.poetry/bin:$PATH"
 export PATH
 
 # Custom prompt
-export PS1='\h:\W \u $ '
-
-# Declutter HOME
-export ANDROID_SDK_HOME=$XDG_CONFIG_HOME/android
-export ANDROID_PREFS_ROOT="$XDG_CONFIG_HOME"/android
-export ANDROID_EMULATOR_HOME="$XDG_DATA_HOME"/android/emulator
-export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
-export GOPATH="$XDG_DATA_HOME"/go
-export IPYTHONDIR="$XDG_CONFIG_HOME"/jupyter
-export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
-export NVM_DIR="$XDG_DATA_HOME"/nvm
-export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
-export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
-export XSERVERRC="$XDG_CONFIG_HOME"/X11/xserverrc
-
-export BASH_COMPLETION_USER_FILE="$XDG_CONFIG_HOME"/bash/bash_completion
-#export HISTFILE="$XDG_DATA_HOME"/bash/history
-
-alias nvidia-settings='nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings'
+export PS1='\[\033[01;32m\]\h:\u\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\]\$ '
 
 # Aliases
 alias sudo='sudo '
@@ -39,7 +30,6 @@ alias open='xdg-open'
 alias ce='python3 -m venv venv'
 alias ae='source venv/bin/activate'
 alias de='deactivate'
-alias vim='nvim'
 alias ll="ls -alrtF --color"
 alias la="ls -A"
 alias l="ls -CF"
@@ -52,18 +42,27 @@ alias ...='cd ..;cd ..'
 alias md='mkdir'
 alias cl='clear'
 alias du='du -ch --max-depth=1'
-alias treeacl='tree -A -C -L 2'
-alias todo='todo.sh '
+
 # Stop the terminal from quiting when Ctrl+D is pressed
 set -o ignoreeof
 
-# No noise on bell
+# Turn off bell
 set bell-style visible
+
+# VI Mode
+set -o vi
+bind 'set show-mode-in-prompt on'
+bind 'set vi-ins-mode-string +'
+bind 'set vi-cmd-mode-string :'
+bind -m vi-insert "\C-l":clear-screen
+
+shopt -s autocd
 
 # Defaults
 export EDITOR=nvim
-export TERMINAL=alacritty
 
+
+# GOOGLE CLOUD SDK
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/albert/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/albert/Downloads/google-cloud-sdk/path.bash.inc'; fi
 
