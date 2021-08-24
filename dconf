@@ -1,0 +1,86 @@
+[org/gnome/desktop/app-folders]
+folder-children=['Utilities', 'YaST', '01de12fd-efc7-48c6-90a4-6735c4762617', '22d4d484-6a84-44b9-9902-8ca0834abc08']
+
+[org/gnome/desktop/app-folders/folders/01de12fd-efc7-48c6-90a4-6735c4762617]
+apps=['libreoffice-impress.desktop', 'libreoffice-writer.desktop', 'libreoffice-calc.desktop']
+name='Office'
+
+[org/gnome/desktop/app-folders/folders/22d4d484-6a84-44b9-9902-8ca0834abc08]
+apps=['The Witcher 3 Wild Hunt.desktop', 'Total War WARHAMMER.desktop', 'Counter-Strike Global Offensive.desktop', 'Kingdom Come Deliverance.desktop', 'Mount & Blade II Bannerlord.desktop']
+name='Games'
+
+[org/gnome/desktop/app-folders/folders/Utilities]
+apps=['gnome-abrt.desktop', 'gnome-system-log.desktop', 'nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.Dictionary.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.eog.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.fonts.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Usage.desktop', 'vinagre.desktop', 'org.gnome.Tour.desktop', 'yelp.desktop', 'org.gnome.Totem.desktop', 'simple-scan.desktop']
+categories=['X-GNOME-Utilities']
+name='X-GNOME-Utilities.directory'
+translate=true
+
+[org/gnome/desktop/background]
+picture-options='zoom'
+picture-uri='file:///usr/share/backgrounds/f28/extras/f28-extras.xml'
+primary-color='#000000000000'
+secondary-color='#000000000000'
+
+[org/gnome/desktop/input-sources]
+current=uint32 0
+mru-sources=[('xkb', 'us'), ('xkb', 'dk')]
+per-window=false
+sources=[('xkb', 'us'), ('xkb', 'dk')]
+xkb-options=['lv3:ralt_switch']
+
+[org/gnome/desktop/interface]
+font-antialiasing='rgba'
+font-hinting='full'
+gtk-theme='Adwaita'
+
+[org/gnome/desktop/notifications]
+show-in-lock-screen=false
+
+[org/gnome/desktop/peripherals/mouse]
+natural-scroll=false
+
+[org/gnome/desktop/peripherals/touchpad]
+two-finger-scrolling-enabled=true
+
+[org/gnome/desktop/privacy]
+disable-microphone=false
+report-technical-problems=false
+
+[org/gnome/desktop/screensaver]
+picture-options='zoom'
+picture-uri='file:///usr/share/backgrounds/f28/extras/f28-extras.xml'
+primary-color='#000000000000'
+secondary-color='#000000000000'
+
+[org/gnome/desktop/search-providers]
+sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
+
+[org/gnome/desktop/wm/keybindings]
+cycle-windows=@as []
+cycle-windows-backward=@as []
+switch-group=['<Alt>Escape']
+switch-group-backward=['<Shift><Alt>Escape']
+toggle-maximized=['<Super>m']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Super>t'
+command='gnome-terminal'
+name='Terminal'
+
+[org/gnome/settings-daemon/plugins/power]
+power-button-action='interactive'
+sleep-inactive-ac-timeout=1800
+sleep-inactive-ac-type='suspend'
+
+[org/gnome/shell]
+enabled-extensions=['background-logo@fedorahosted.org', 'appindicatorsupport@rgcjonas.gmail.com']
+favorite-apps=['org.gnome.Terminal.desktop', 'firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop', 'steam.desktop', 'com.discordapp.Discord.desktop', 'chat.rocket.RocketChat.desktop']
+welcome-dialog-last-shown-version='40.0'
+
+[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+audible-bell=false
+default-size-columns=132
+default-size-rows=43
+font='IBM Plex Mono 12'
+use-system-font=false
+use-theme-colors=true
