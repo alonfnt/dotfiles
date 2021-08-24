@@ -63,7 +63,6 @@ vim.wo.signcolumn = 'number'
 
 --Set colorscheme (order is important here)
 vim.o.termguicolors = true
-vim.g.colors_name = 'default'
 
 --Remap space as leader key
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
