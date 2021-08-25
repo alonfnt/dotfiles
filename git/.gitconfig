@@ -14,6 +14,10 @@
 	smudge = git-lfs smudge -- %f
 	required = true
 [diff]
-	tool = meld
+	tool = vimdiff3
 [pull]
 	rebase = false
+[difftool "vimdiff3"]
+	path = nvim
+[merge]
+	tool = vimdiff3
