@@ -124,6 +124,10 @@ _G.packer_plugins = {
   ["vim-rhubarb"] = {
     loaded = true,
     path = "/home/alonfnt/.local/share/nvim/site/pack/packer/start/vim-rhubarb"
+  },
+  vimtex = {
+    loaded = true,
+    path = "/home/alonfnt/.local/share/nvim/site/pack/packer/start/vimtex"
   }
 }
 

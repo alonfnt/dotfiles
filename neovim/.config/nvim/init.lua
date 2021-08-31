@@ -30,6 +30,8 @@ local use = require('packer').use require('packer').startup(function() use 'wbth
   use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
   use 'hrsh7th/nvim-compe' -- Autocompletion plugin
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
+  -- LateX related
+  use 'lervag/vimtex' -- VimTex
 end)
 
 --Incremental live completion
@@ -312,3 +314,6 @@ vim.api.nvim_set_keymap('s', '<S-Tab>', 'v:lua.s_tab_complete()', { expr = true 
 -- Map compe confirm and complete functions
 vim.api.nvim_set_keymap('i', '<cr>', 'compe#confirm("<cr>")', { expr = true })
 vim.api.nvim_set_keymap('i', '<c-space>', 'compe#complete()', { expr = true })
+
+-- VIMTex configuration
+-- vim.g.vimtex_view_general_viewer = 'evince'
