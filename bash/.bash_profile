@@ -11,3 +11,5 @@ fi
 
 # User specific environment and startup programs
 export TERMINAL=alacritty
+
+export PATH="$HOME/.poetry/bin:$PATH"

@@ -49,22 +49,16 @@ set -o ignoreeof
 # Turn off bell
 set bell-style visible
 
-# VI Mode
-#set -o vi
-#bind 'set show-mode-in-prompt on'
-#bind 'set vi-ins-mode-string +'
-#bind 'set vi-cmd-mode-string :'
-#bind -m vi-insert "\C-l":clear-screen
-
 shopt -s autocd
 
 # Defaults
 export EDITOR=nvim
 
-
-# GOOGLE CLOUD SDK
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/albert/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/albert/Downloads/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/albert/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/albert/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+# Set up bash completion
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
