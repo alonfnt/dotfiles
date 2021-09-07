@@ -317,3 +317,8 @@ vim.api.nvim_set_keymap('i', '<c-space>', 'compe#complete()', { expr = true })
 
 -- VIMTex configuration
 -- vim.g.vimtex_view_general_viewer = 'evince'
+-- vim.g.vimtex_quickfix_ignore_all_warnings = 1
+vim.g.vimtex_quickfix_ignore_filters = {
+	'Underfull',
+	'Overfull', 
+}
