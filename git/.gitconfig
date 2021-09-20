@@ -16,7 +16,7 @@
 [diff]
 	tool = vimdiff3
 [pull]
-	rebase = false
+	rebase = true
 [difftool "vimdiff3"]
 	path = nvim
 [merge]
