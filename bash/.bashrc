@@ -27,6 +27,7 @@ export PS1='\[\033[01;32m\]\h:\u\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\]\$ '
 # Aliases
 alias sudo='sudo '
 alias open='xdg-open'
+alias o='xdg-open'
 alias ce='python3 -m venv venv'
 alias ae='source venv/bin/activate'
 alias de='deactivate'
