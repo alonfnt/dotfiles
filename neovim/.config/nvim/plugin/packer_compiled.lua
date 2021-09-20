@@ -105,6 +105,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/alonfnt/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
+  ["vim-LanguageTool"] = {
+    loaded = true,
+    path = "/home/alonfnt/.local/share/nvim/site/pack/packer/start/vim-LanguageTool"
+  },
   ["vim-commentary"] = {
     loaded = true,
     path = "/home/alonfnt/.local/share/nvim/site/pack/packer/start/vim-commentary"
