@@ -9,3 +9,6 @@ TensorFlow
 PyTorch
 DIKU
 constrains
+Regressor
+SLURM
+Erda
