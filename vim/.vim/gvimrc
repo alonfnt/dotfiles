@@ -1,1 +1,12 @@
+" Appearance
 set guifont=SF\ Mono\ 14
+
+" Change hideous pink on title
+hi Title guifg=#0000ff
+
+" Disable bell sounds
+set noerrorbells
+set vb t_vb= 
+
+" Clipboard shared with system
+set clipboard=unnamedplus
