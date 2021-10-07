@@ -2,39 +2,31 @@
 " Plugins for VIM - Installation File
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/bundle')
-" Utilities--------------------
+" Utilities-------------------
 Plug 'preservim/nerdtree' " Directory browser
 Plug 'ap/vim-css-color' " Show the color in the file when written HEX
 Plug 'tpope/vim-eunuch' " Add UNIX shell commands
 Plug 'junegunn/goyo.vim' " Distraction free
-"Plug 'vim-airline/vim-airline' " Cool statusbar
 Plug 'rhysd/clever-f.vim' " Find the next ocurrance
 Plug 'manasthakur/vim-commentor' " Enhanced gcc comment
 Plug 'christoomey/vim-conflicted' " Use :Confliced to solve git conflictions
 Plug 'tpope/vim-fugitive' " Incorporates git into the command line.
-"Plug 'airblade/vim-gitgutter' " Shows Git changes.
-" Colorschemes-------------------- 
-Plug 'morhetz/gruvbox' " Gruvbox Colorscheme
-Plug 'google/vim-colorscheme-primary' " Google Colorscheme
-Plug 'jaredgorski/spacecamp' " Space Colorscheme
-Plug 'ayu-theme/ayu-vim'
-Plug 'sonph/onehalf', { 'rtp': 'vim' } 
-Plug 'kkga/vim-envy'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'humanoid-colors/vim-humanoid-colorscheme'
-Plug 'rakr/vim-one'
-" LateX--------------------
-"Plug 'lervag/vimtex'
-"Plug 'vim-latex/vim-latex'
-" Python--------------------
+Plug 'airblade/vim-gitgutter' " Shows Git changes.
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+" LateX-----------------------
+Plug 'lervag/vimtex'
+Plug 'sirver/ultisnips'
+Plug 'KeitaNakamura/tex-conceal.vim'
+" Python----------------------
 Plug 'vim-python/python-syntax' " Adds support for python3 syntax.
-" GoLang--------------------
+" GoLang----------------------
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" C/C++---------------------
+" C/C++-----------------------
 Plug 'vim-scripts/a.vim' " Switch between .h and .c
-" Templates-----------------
+" Templates-------------------
 Plug 'tibabit/vim-templates' " Starts document with template.
-" Autocomplete --
+" Autocomplete----------------
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
@@ -51,3 +43,21 @@ let g:tmpl_author_name = 'Albert Alonso'
 
 " Set the configuration of coc-vim
 source ~/.vim/coc.vim
+
+" Fuzzy Finder Shortcuts
+nnoremap <silent> <leader>f :FZF<cr>
+nnoremap <silent> <leader>F :FZF ~<cr>
+
+" VimTex settings
+let g:vimtex_quickfix_mode=0
+let g:vimtex_compiler_latexmk = {'options' : ['-pdf','-shell-escape','-verbose','-file-line-error','-synctex=1','-interaction=nonstopmode',]}
+
+" UltiSnips settings
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
+" Tex Conceal
+set conceallevel=1
+let g:tex_conceal='abdmg'
+hi Conceal ctermbg=none
