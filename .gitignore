@@ -1,1 +1,5 @@
 neovim/.config/nvim/spell/
+
+# Disable the plugins files
+vim/.vim/bundle
+vim/.vim/autoload/
