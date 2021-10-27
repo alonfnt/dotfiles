@@ -7,7 +7,7 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin('~/.vim/bundle')
-" Utilities-------------------
+" Utilities
 Plug 'preservim/nerdtree' " Directory browser
 Plug 'ap/vim-css-color' " Show the color in the file when written HEX
 Plug 'tpope/vim-eunuch' " Add UNIX shell commands
@@ -19,20 +19,22 @@ Plug 'tpope/vim-fugitive' " Incorporates git into the command line.
 Plug 'airblade/vim-gitgutter' " Shows Git changes.
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-" LateX-----------------------
+" LateX
 Plug 'lervag/vimtex'
 Plug 'sirver/ultisnips'
 Plug 'KeitaNakamura/tex-conceal.vim'
-" Python----------------------
+" Python
 Plug 'vim-python/python-syntax' " Adds support for python3 syntax.
-" GoLang----------------------
+" GoLang
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" C/C++-----------------------
+" C/C++
 Plug 'vim-scripts/a.vim' " Switch between .h and .c
-" Templates-------------------
+" Templates
 Plug 'tibabit/vim-templates' " Starts document with template.
-" Autocomplete----------------
+" Autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" VimWiki
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
