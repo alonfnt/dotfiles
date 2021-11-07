@@ -1,70 +1,86 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins for VIM - Installation File
+" Plugins for VIM
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Automatic installation of Plugin Manager
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/bundle')
-" Utilities
-Plug 'preservim/nerdtree' " Directory browser
-Plug 'ap/vim-css-color' " Show the color in the file when written HEX
-Plug 'tpope/vim-eunuch' " Add UNIX shell commands
-Plug 'junegunn/goyo.vim' " Distraction free
-Plug 'rhysd/clever-f.vim' " Find the next ocurrance
-Plug 'manasthakur/vim-commentor' " Enhanced gcc comment
-Plug 'christoomey/vim-conflicted' " Use :Confliced to solve git conflictions
-Plug 'tpope/vim-fugitive' " Incorporates git into the command line.
-Plug 'airblade/vim-gitgutter' " Shows Git changes.
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-" LateX
-Plug 'lervag/vimtex'
-Plug 'sirver/ultisnips'
-Plug 'KeitaNakamura/tex-conceal.vim'
-" Python
-Plug 'vim-python/python-syntax' " Adds support for python3 syntax.
-" GoLang
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" C/C++
-Plug 'vim-scripts/a.vim' " Switch between .h and .c
-" Templates
-Plug 'tibabit/vim-templates' " Starts document with template.
+
+" Directory Browser
+Plug 'preservim/nerdtree'
+nnoremap <silent> <leader>e :NERDTreeToggle<cr>
+
 " Autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" VimWiki
-Plug 'vimwiki/vimwiki'
-call plug#end()
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins Configuration
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Enable all highlights from python-syntax
-let g:python_highlight_all = 1
-
-" Set the placeholder values for the templates
-let g:tmpl_author_email = 'aalonso@pm.me'
-let g:tmpl_author_name = 'Albert Alonso'
-
-" Set the configuration of coc-vim
 source ~/.vim/coc.vim
 
-" Fuzzy Finder Shortcuts
+" Show the color in the file when written HEX
+Plug 'ap/vim-css-color' 
+
+" Add UNIX shell commands
+Plug 'tpope/vim-eunuch' 
+
+" Distraction free
+Plug 'junegunn/goyo.vim' 
+
+" Enhanced GCC comment
+Plug 'manasthakur/vim-commentor'
+
+" Use :Conflicted to solve git conflict ions
+Plug 'christoomey/vim-conflicted' 
+
+" Incorporates git into the command line.
+Plug 'tpope/vim-fugitive' 
+
+" Shows Git changes.
+Plug 'airblade/vim-gitgutter' 
+
+" Fuzzy search
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 nnoremap <silent> <leader>f :FZF<cr>
 nnoremap <silent> <leader>F :FZF ~<cr>
 
-" VimTex settings
+" Latex
+Plug 'lervag/vimtex'
 let g:vimtex_quickfix_mode=0
 let g:vimtex_compiler_latexmk = {'options' : ['-pdf','-shell-escape','-verbose','-file-line-error','-synctex=1','-interaction=nonstopmode',]}
 
-" UltiSnips settings
+Plug 'KeitaNakamura/tex-conceal.vim'
+set conceallevel=1
+let g:tex_conceal='abdmg'
+hi Conceal ctermbg=none
+
+" Snippets
+Plug 'sirver/ultisnips'
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
-" Tex Conceal
-set conceallevel=1
-let g:tex_conceal='abdmg'
-hi Conceal ctermbg=none
+" Python extended syntax support
+Plug 'vim-python/python-syntax'
+let g:python_highlight_all = 1
+
+" Go Lang
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" C/C++
+Plug 'vim-scripts/a.vim' " Switch between .h and .c
+
+" Templates - Start documents with a template
+Plug 'tibabit/vim-templates' 
+let g:tmpl_author_email = 'aalonso@protonmail.com'
+let g:tmpl_author_name = 'Albert Alonso'
+
+" Vim Wiki
+Plug 'vimwiki/vimwiki'
+
+call plug#end()

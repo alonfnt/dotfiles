@@ -23,13 +23,15 @@ set number
 set hidden
 set splitbelow
 set splitright
-set autochdir
 set relativenumber
 
 set hlsearch 
 set incsearch 
 set ignorecase 
 set smartcase
+
+setlocal spell
+set spelllang=en_gb
 
 filetype off 
 filetype plugin indent on 
@@ -44,3 +46,6 @@ source ~/.vim/plugins.vim
 nnoremap <C-_> :nohlsearch<CR>
 nnoremap <C-/> :nohlsearch<CR>
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+
+" Fix typos writing with a quick keystroke
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
