@@ -4,3 +4,5 @@ neovim/.config/nvim/spell/
 vim/.vim/bundle
 vim/.vim/autoload/
 neovim/.config/nvim/plugin
+
+*.swp
