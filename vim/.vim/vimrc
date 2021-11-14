@@ -23,7 +23,7 @@ set number
 set hidden
 set splitbelow
 set splitright
-set relativenumber
+set autochdir
 
 set hlsearch 
 set incsearch 

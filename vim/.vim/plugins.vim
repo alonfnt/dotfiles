@@ -83,4 +83,7 @@ let g:tmpl_author_name = 'Albert Alonso'
 " Vim Wiki
 Plug 'vimwiki/vimwiki'
 
+" GVim Fontsize
+Plug 'alonfnt/gvim-zoom'
+
 call plug#end()
