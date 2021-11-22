@@ -18,7 +18,6 @@ snippet template "Basic template" b
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
-\usepackage[dutch]{babel}
 \usepackage{amsmath, amssymb}
 
 
@@ -37,6 +36,47 @@ snippet template "Basic template" b
 
 \begin{document}
 	$0
+\end{document}
+endsnippet
+
+snippet slides "Basic slides template" b
+% !TEX program=lualatex
+\documentclass[aspectratio=43]{beamer}
+
+\usetheme[ku, wide]{Frederiksberg}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\title{Title}
+\subtitle{Subtitle}
+\author{Albert Alonso}
+\institute{Niels Bohr Institute}
+\date{\today}
+
+\begin{document}
+
+\frame[plain]{\titlepage}
+
+\begin{frame}{}
+\end{frame}
+
 \end{document}
 endsnippet
 
