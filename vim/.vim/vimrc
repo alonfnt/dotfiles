@@ -38,6 +38,10 @@ filetype plugin indent on
 " Settings depending on file type
 autocmd Filetype tex setlocal nofoldenable " Not folding on LaTEX files
 
+autocmd Filetype python nnoremap <Leader>rr :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd Filetype python inoremap <buffer> <Leader>rr <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+
+
 " Plugins
 source ~/.vim/plugins.vim 
 
@@ -48,3 +52,4 @@ nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
 " Fix typos writing with a quick keystroke
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+ 
