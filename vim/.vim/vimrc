@@ -24,7 +24,6 @@ set hidden
 set splitbelow
 set splitright
 set autochdir
-
 set hlsearch 
 set incsearch 
 set ignorecase 
@@ -37,10 +36,8 @@ filetype plugin indent on
 
 " Settings depending on file type
 autocmd Filetype tex setlocal nofoldenable " Not folding on LaTEX files
-
 autocmd Filetype python nnoremap <Leader>rr :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd Filetype python inoremap <buffer> <Leader>rr <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-
 
 " Plugins
 source ~/.vim/plugins.vim 
@@ -50,6 +47,19 @@ nnoremap <C-_> :nohlsearch<CR>
 nnoremap <C-/> :nohlsearch<CR>
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
+" Autoclosing mappings
+inoremap {<CR> {<CR>}<C-o>O
+inoremap [<CR> [<CR>]<C-o>O
+inoremap (<CR> (<CR>)<C-o>O
+
+" Start a new change before deleting with Ctrl+u, so a normal mode "u" can still
+" recover the deleted word or line.  Normally Ctrl+u while in insert mode
+" would delete the text without undo history and it would be lost forever.
+inoremap <c-u> <c-g>u<c-u>
+inoremap <c-w> <c-g>u<c-w>
+
 " Fix typos writing with a quick keystroke
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
  
+" Automatic abreviations
+iabbrev todo # TODO(alonfnt):
