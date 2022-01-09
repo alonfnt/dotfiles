@@ -24,7 +24,7 @@ set shortmess+=c
 " diagnostics appear/become resolved.
 "if has("patch-8.1.1564")
 "  " Recently vim can merge signcolumn and number column into one
-"  set signcolumn=number
+  set signcolumn=number
 "else
 "  set signcolumn=yes
 "endif
@@ -160,3 +160,5 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+
+au FileType python let b:coc_root_patterns = ['.git', '.env', 'venv', '.venv', 'setup.cfg', 'setup.py', 'pyrightconfig.json', 'env']

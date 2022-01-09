@@ -1,6 +1,7 @@
 " Appearance
-set guifont=JetBrains\ Mono\ 12
+set guifont=Noto\ Mono\ 12
 set toolbariconsize=large
+colorscheme github
 
 " Change hideous pink on title
 hi Title guifg=#0000ff

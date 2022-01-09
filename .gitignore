@@ -4,6 +4,7 @@ neovim/.config/nvim/spell/
 vim/.vim/bundle
 vim/.vim/autoload/
 vim/.vim/spell/
+vim/.vim/black/
 neovim/.config/nvim/plugin
 
 *.swp
