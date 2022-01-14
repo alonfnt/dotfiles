@@ -1,5 +1,5 @@
 " Appearance
-set guifont=Noto\ Mono\ 12
+set guifont=IBM\ Plex\ Mono\ 12
 set toolbariconsize=large
 colorscheme github
 
