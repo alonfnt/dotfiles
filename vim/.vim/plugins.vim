@@ -31,6 +31,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'psf/black'
 Plug 'cormacrelf/vim-colors-github'
+Plug 'ayu-theme/ayu-vim'
+Plug 'lifepillar/vim-solarized8'
 call plug#end()
 
 " Plugins Configurations

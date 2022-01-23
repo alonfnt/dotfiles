@@ -1,7 +1,8 @@
 " Appearance
-set guifont=IBM\ Plex\ Mono\ 12
+set guifont=Ubuntu\ Mono\ 14
 set toolbariconsize=large
-colorscheme github
+set termguicolors     " enable true colors support
+colorscheme solarized8_flat
 
 " Change hideous pink on title
 hi Title guifg=#0000ff
