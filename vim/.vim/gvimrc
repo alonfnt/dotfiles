@@ -1,11 +1,14 @@
 " Appearance
-set guifont=Ubuntu\ Mono\ 14
+set guifont=Liberation\ Mono\ 12
 set toolbariconsize=large
 set termguicolors     " enable true colors support
-colorscheme solarized8_flat
 
-" Change hideous pink on title
+"colorscheme github
+
+" Change some highlights in the default colorscheme
 hi Title guifg=#0000ff
+hi String guifg=DarkRed
+hi Comment guifg=DarkGreen
 
 " Disable bell sounds
 set noerrorbells
