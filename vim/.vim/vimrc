@@ -78,12 +78,7 @@ filetype plugin indent on
 let g:netrw_banner=0
 
 " Settings depending on file type
-autocmd Filetype tex setlocal nofoldenable " Not folding on LaTEX files
-autocmd Filetype python inoremap <buffer> <F5> <esc>:w<CR>:make<CR>
 autocmd Filetype python setlocal makeprg=python3\ %
-
-" Plugins
-source ~/.vim/plugins.vim 
 
 " Autoclosing mappings
 inoremap {<CR> {<CR>}<C-o>O
@@ -104,3 +99,9 @@ iabbrev todo # TODO(albert):
 
 " Command to create a tags file in the root folder of a project
 command! MakeTags !ctags -R --exclude=.git --exclude=.venv  .
+
+" Command to update vim's configuration
+command! RefreshVim source $MYVIMRC
+
+" Plugins
+source ~/.vim/plugins.vim 

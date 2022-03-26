@@ -1,9 +1,11 @@
 " Plugins for VIM
 "
+" Please: Plugins should be small and should target one action -- otherwise
+" this becomes a mess to troubleshoot.
+
 " Automatic installation of Plugin Manager
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+if empty('~/.vim/autoload/plug.vim')
+  silent execute '!curl -fLo '~/.vim/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -29,8 +31,17 @@ Plug 'alonfnt/gvim-zoom'
 
 " Handy formatter
 Plug 'psf/black'
+
+" The beast... To be removed one day hopefully
+" In order to install node, use the recommended command:
+" curl -sL install-node.vercel.app/lts | bash
+" with root
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+source ~/.vim/coc.vim
+
 call plug#end()
 
+" VimTex settings
 let g:vimtex_quickfix_mode=0
 let g:vimtex_compiler_latexmk = {'options' : ['-pdf','-shell-escape','-verbose','-file-line-error','-synctex=1','-interaction=nonstopmode',]}
 set conceallevel=1
@@ -38,4 +49,5 @@ let g:tex_conceal='abdmg'
 hi Conceal ctermbg=none
 let g:UltiSnipsExpandTrigger = "<nop>"
 
+" Python-syntax settings
 let g:python_highlight_all = 1
