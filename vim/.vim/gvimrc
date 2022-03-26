@@ -1,14 +1,9 @@
 " Appearance
-set guifont=Liberation\ Mono\ 12
-set toolbariconsize=large
-set termguicolors     " enable true colors support
-
-"colorscheme github
+set guifont=Monospace\ 14
 
 " Change some highlights in the default colorscheme
 hi Title guifg=#0000ff
 hi String guifg=DarkRed
-hi Comment guifg=DarkGreen
 
 " Disable bell sounds
 set noerrorbells
