@@ -11,3 +11,8 @@ set vb t_vb=
 
 " Clipboard shared with system
 set clipboard=unnamedplus
+
+" Command to update gvim's configuration
+command! GRefreshVim source $MYGVIMRC
+
+colorscheme minimal

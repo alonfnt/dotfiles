@@ -26,8 +26,11 @@ Plug 'sirver/ultisnips'
 " Mainly because vim python syntax does not count f-strings
 Plug 'vim-python/python-syntax'
 
-" Increase size easily on GVim
+" Increase size easily on gVim
 Plug 'alonfnt/gvim-zoom'
+
+" Colorscheme for gVim
+Plug 'alonfnt/vim-minimal'
 
 " Handy formatter
 Plug 'psf/black'
@@ -37,6 +40,10 @@ Plug 'psf/black'
 " curl -sL install-node.vercel.app/lts | bash
 " with root
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Tag manager
+Plug 'ludovicchabant/vim-gutentags'
+
 source ~/.vim/coc.vim
 
 call plug#end()
@@ -51,3 +58,7 @@ let g:UltiSnipsExpandTrigger = "<nop>"
 
 " Python-syntax settings
 let g:python_highlight_all = 1
+
+" Add an indicator of when tags are being generated
+set statusline=%f\ %h%w%m%r\ %=%(%l,%c%V\ %=\ %P%)
+set statusline+=%{gutentags#statusline()}
