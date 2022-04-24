@@ -1,5 +1,13 @@
-" No need to be compatible with vi.
-set nocompatible
+" My custom vimrc file.
+"
+" Maintainer:    Albert Alonso <aalonso@proton.me>
+" Last Change:   2022 Apr 09
+"
+" This is the file config file that loads opeining vim.
+" Some configurations are left to $VIMRUNTIME/defaults.vim to handle.
+" To skip vim defaults file, uncomment the following line:
+"let skip_defaults_vim
+
 
 " Some encoding nicesities
 set encoding=utf-8 
@@ -10,13 +18,8 @@ set path+=**
 " Allows the use of the mouse to select, copy etc.
 set mouse=a
 
-" Tab completion suggestions when using vim commands.
-set wildmenu
-set wildmode=list:longest,full
-      
-" Wraps the lines so that everything can be read without horitzontal
-" scrolling. I don't know if it good to have.
-" set wrap 
+" Wraps the lines so that everything can be read without horitzontal scrolling. 
+set wrap 
 
 " Don't fold sections of the file
 set nofoldenable
@@ -27,12 +30,10 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+set smarttab
 
 " Some padding to start scrolling before touching the boundary of the file.
 set scrolloff=5 
-
-" Not sure what it does.
-set backspace=indent,eol,start 
 
 " Faster terminal redraw.
 set ttyfast
@@ -40,29 +41,11 @@ set ttyfast
 " Include filename in the bottom bar.
 set laststatus=2
 
-" Shows the command in the command bar even when run as a shortcut.
-set showcmd 
-
 " Not sure what it does.
 set matchpairs+=<:> 
 
 " Show row number.
 set number 
-
-" Split below when opening a new split file.
-"set splitbelow
-
-" Split on the right when opening a new file.
-"set splitright
-
-" Automatically change the root path to be in the folder where the file is.
-" Let's try to start vim session from the root folder of the project so that
-" we can use find.
-"set autochdir
-
-" Search settings to highligh search
-"set hlsearch 
-set incsearch 
 
 " Search regardless of capital letters
 set ignorecase 
@@ -78,12 +61,8 @@ filetype plugin indent on
 let g:netrw_banner=0
 
 " Settings depending on file type
+" For Python files -> set :make command to run current file.
 autocmd Filetype python setlocal makeprg=python3\ %
-
-" Autoclosing mappings
-inoremap {<CR> {<CR>}<C-o>O
-inoremap [<CR> [<CR>]<C-o>O
-inoremap (<CR> (<CR>)<C-o>O
 
 " Start a new change before deleting with Ctrl+u, so a normal mode "u" can still
 " recover the deleted word or line.  Normally Ctrl+u while in insert mode
@@ -93,15 +72,21 @@ inoremap <c-w> <c-g>u<c-w>
 
 " Fix typos writing with a quick keystroke Ctrl+l
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
- 
-" Automatic abreviations
-iabbrev todo # TODO(albert):
 
-" Command to create a tags file in the root folder of a project
-command! MakeTags !ctags -R --exclude=.git --exclude=.venv  .
+" Remove highlighting of searched words.
+nnoremap <C-S> :nohlsearch<CR>
+ 
+" Persistent undo history
+set undofile
+set undodir=$HOME/.cache
+set undolevels=1000
+set undoreload=1000
+
+" Add a breakpoint after the current line
+noremap <leader>b obreakpoint()<esc>
 
 " Command to update vim's configuration
 command! RefreshVim source $MYVIMRC
 
-" Plugins
-source ~/.vim/plugins.vim 
+" Load Plugins
+source $HOME/.vim/plugins.vim

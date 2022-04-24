@@ -1,5 +1,6 @@
 " Appearance
-set guifont=Monospace\ 14
+set guifont=IBM\ Plex\ Mono\ 12
+set guioptions=c
 
 " Change some highlights in the default colorscheme
 hi Title guifg=#0000ff
@@ -15,4 +16,6 @@ set clipboard=unnamedplus
 " Command to update gvim's configuration
 command! GRefreshVim source $MYGVIMRC
 
-colorscheme minimal
+" Initial window size
+set columns=100
+set lines=50
