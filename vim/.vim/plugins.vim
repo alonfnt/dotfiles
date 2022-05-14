@@ -22,6 +22,7 @@ Plug 'ludovicchabant/vim-gutentags' " Tag manager.
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Big boy LSP.
 Plug 'junegunn/fzf', {'do': { -> fzf#install() } } " Fuzzy search.
 Plug 'junegunn/fzf.vim' " Fuzzy search VIM integration.
+Plug 'dikiaap/minimalist' " All around nice colorscheme
 call plug#end()
 
 "========================================
