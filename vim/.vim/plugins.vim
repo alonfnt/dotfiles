@@ -13,6 +13,7 @@ endif
 call plug#begin()
 Plug 'manasthakur/vim-commentor' " Comments line with gc.
 Plug 'airblade/vim-gitgutter' " Shows git diffs in editor.
+Plug 'tpope/vim-fugitive' " Git wrapper inside vim.
 Plug 'lervag/vimtex' " LaTex in Vim.
 Plug 'sirver/ultisnips' " The ultimate snippet solution for Vim.
 Plug 'vim-python/python-syntax' " Python syntax highlighting for Vim.
