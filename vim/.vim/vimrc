@@ -24,6 +24,10 @@ set wrap
 " Don't fold sections of the file
 set nofoldenable
 
+" Add completion wildmenu on the command line
+set nowildmenu
+set wildmode=list:full
+
 " Insert spaces instead of tabs when pressing tab.
 " Number of spaces that a tab counts for.
 set tabstop=4
