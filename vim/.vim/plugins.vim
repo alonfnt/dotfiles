@@ -99,7 +99,7 @@ au FileType python let b:coc_root_patterns = ['.git', '.env', 'venv', '.venv', '
 "========================================
 noremap <leader>f :Files<CR>
 noremap <leader>g :Commits<CR>
-noremap <leader>t :Tags<CR>
+noremap <leader>b :Buffers<CR>
 
 
 "========================================
