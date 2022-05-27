@@ -54,6 +54,7 @@ set number
 " Search regardless of capital letters
 set ignorecase 
 set smartcase
+set incsearch
 
 " Set spelling language to be British english.
 set spelllang=en_gb
