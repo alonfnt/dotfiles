@@ -14,7 +14,7 @@ let s:orange          = { "gui": "#ff4500", "cterm": "167" }
 
 " Groups used in the 'highlight' and 'guicursor' options default value.
 hi ErrorMsg term=standout ctermbg=DarkRed ctermfg=White guibg=Red guifg=White
-hi IncSearch term=reverse cterm=reverse gui=reverse
+hi IncSearch term=reverse cterm=reverse gui=reverse guibg=black guifg=yellow
 hi ModeMsg term=bold cterm=bold gui=bold
 hi VertSplit term=reverse cterm=reverse gui=reverse
 hi Visual term=reverse cterm=reverse gui=reverse guifg=Grey guibg=fg
@@ -41,6 +41,7 @@ hi StatusLine	cterm=bold ctermbg=Black ctermfg=Yellow guibg=white guifg=blue
 hi StatusLineNC	cterm=bold ctermbg=blue ctermfg=black  guibg=white guifg=black
 hi NonText term=bold ctermfg=Blue gui=bold guifg=gray guibg=white
 hi Cursor guibg=fg guifg=bg
+hi Visual guibg=black guifg=yellow
 
 " syntax highlighting
 hi PreProc    term=underline cterm=NONE ctermfg=darkmagenta  gui=NONE guifg=magenta3
