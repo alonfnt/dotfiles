@@ -3,12 +3,8 @@
 set guifont=JetBrains\ Mono\ 13
 set guioptions=c
 
-set background=dark
-colorscheme minimalist
-
-" Change some highlights in the default colorscheme
-"hi Title guifg=#0000ff
-"hi String guifg=DarkRed
+set background=light
+colorscheme IDLE
 
 " Disable bell sounds
 set noerrorbells
