@@ -1,10 +1,10 @@
 " Appearance
-"set guifont=IBM\ Plex\ Mono\ 12
 set guifont=JetBrains\ Mono\ 13
 set guioptions=c
 
-set background=light
-colorscheme IDLE
+" Change some highlights in the default colorscheme
+hi Title guifg=#0000ff
+hi String guifg=DarkRed
 
 " Disable bell sounds
 set noerrorbells
