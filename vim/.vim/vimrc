@@ -8,6 +8,9 @@
 " To skip vim defaults file, uncomment the following line:
 "let skip_defaults_vim
 
+" Change leader key to be the space bar
+nnoremap <SPACE> <Nop>
+let mapleader="\<Space>"
 
 " Some encoding nicesities
 set encoding=utf-8 
@@ -79,9 +82,6 @@ inoremap <c-w> <c-g>u<c-w>
 " Fix typos writing with a quick keystroke Ctrl+l
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
-" Remove highlighting of searched words.
-nnoremap <C-S> :nohlsearch<CR>
- 
 " Persistent undo history
 set undofile
 set undodir=$HOME/.cache
@@ -90,6 +90,10 @@ set undoreload=1000
 
 " Add a breakpoint after the current line
 noremap <leader>b obreakpoint()<esc>
+noremap <leader>q :quit<CR>
+noremap <leader>w :write<CR>
+noremap <leader>s :nohlsearch<CR>
+
 
 " Command to update vim's configuration
 command! RefreshVim source $MYVIMRC

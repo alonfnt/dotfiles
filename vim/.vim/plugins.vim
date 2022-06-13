@@ -98,7 +98,6 @@ au FileType python let b:coc_root_patterns = ['.git', '.env', 'venv', '.venv', '
 "==== Fuzzy Search Finder
 "========================================
 noremap <leader>f :Files<CR>
-noremap <leader>g :Commits<CR>
 noremap <leader>b :Buffers<CR>
 
 
@@ -111,3 +110,8 @@ set updatetime=300
 "==== UltiSnips
 "========================================
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]
+
+"========================================
+"==== Vim-Fugitive
+"========================================
+noremap <leader>g :Git<CR>
