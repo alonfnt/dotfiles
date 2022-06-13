@@ -68,6 +68,7 @@ let g:netrw_banner=0
 " Settings depending on file type
 " For Python files -> set :make command to run current file.
 autocmd Filetype python setlocal makeprg=python3\ %
+autocmd Filetype python setlocal colorcolumn=100
 
 " Start a new change before deleting with Ctrl+u, so a normal mode "u" can still
 " recover the deleted word or line.  Normally Ctrl+u while in insert mode
