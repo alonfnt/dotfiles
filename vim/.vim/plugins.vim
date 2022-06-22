@@ -23,7 +23,18 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} " Big boy LSP.
 Plug 'junegunn/fzf', {'do': { -> fzf#install() } } " Fuzzy search.
 Plug 'junegunn/fzf.vim' " Fuzzy search VIM integration.
 Plug 'dikiaap/minimalist' " All around nice colorscheme
+Plug 'altercation/vim-colors-solarized' " Solarized colorscheme
 call plug#end()
+
+"========================================
+"==== Colorscheme
+"========================================
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+colorscheme solarized
 
 "========================================
 "==== VimTex Configuration
