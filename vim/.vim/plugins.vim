@@ -22,8 +22,7 @@ Plug 'ludovicchabant/vim-gutentags' " Tag manager.
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Big boy LSP.
 Plug 'junegunn/fzf', {'do': { -> fzf#install() } } " Fuzzy search.
 Plug 'junegunn/fzf.vim' " Fuzzy search VIM integration.
-Plug 'dikiaap/minimalist' " All around nice colorscheme
-Plug 'altercation/vim-colors-solarized' " Solarized colorscheme
+Plug 'arzg/vim-colors-xcode' " XCode colorschemes
 call plug#end()
 
 "========================================
@@ -31,10 +30,12 @@ call plug#end()
 "========================================
 if has('gui_running')
     set background=light
+    colorscheme xcodelight
 else
     set background=dark
+    colorscheme xcodedark
+
 endif
-colorscheme solarized
 
 "========================================
 "==== VimTex Configuration

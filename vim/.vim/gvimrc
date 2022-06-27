@@ -1,10 +1,7 @@
 " Appearance
-set guifont=JetBrains\ Mono\ 13
+set guifont=SF\ Mono\ 14
 set guioptions=c
 
-" Change some highlights in the default colorscheme
-hi Title guifg=#0000ff
-hi String guifg=DarkRed
 
 " Disable bell sounds
 set noerrorbells
