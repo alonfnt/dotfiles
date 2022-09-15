@@ -52,7 +52,7 @@ set laststatus=2
 set matchpairs+=<:> 
 
 " Show row number.
-set number 
+set nonumber 
 
 " Search regardless of capital letters
 set ignorecase 
@@ -94,6 +94,9 @@ noremap <leader>q :quit<CR>
 noremap <leader>w :write<CR>
 noremap <leader>s :nohlsearch<CR>
 
+" Split in a more expected manner
+set splitbelow
+set splitright
 
 " Command to update vim's configuration
 command! RefreshVim source $MYVIMRC
