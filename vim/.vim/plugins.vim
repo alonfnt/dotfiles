@@ -13,28 +13,36 @@ endif
 call plug#begin()
 Plug 'manasthakur/vim-commentor' " Comments line with gc.
 Plug 'airblade/vim-gitgutter' " Shows git diffs in editor.
+
 Plug 'tpope/vim-fugitive' " Git wrapper inside vim.
+Plug 'tpope/vim-vividchalk' " A colorscheme
+Plug 'tpope/vim-surround' " Parenthesis matching
+
 Plug 'lervag/vimtex' " LaTex in Vim.
 Plug 'sirver/ultisnips' " The ultimate snippet solution for Vim.
+Plug 'anufrievroman/vim-angry-reviewer' " Angry review suggestions
+
 Plug 'vim-python/python-syntax' " Python syntax highlighting for Vim.
+
 Plug 'alonfnt/gvim-zoom', {'branch': 'devel'} " Increase font in GVim.
-Plug 'ludovicchabant/vim-gutentags' " Tag manager.
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Big boy LSP.
+
 Plug 'junegunn/fzf', {'do': { -> fzf#install() } } " Fuzzy search.
 Plug 'junegunn/fzf.vim' " Fuzzy search VIM integration.
-Plug 'arzg/vim-colors-xcode' " XCode colorschemes
 call plug#end()
 
 "========================================
 "==== Colorscheme
 "========================================
 if has('gui_running')
-    set background=light
-    colorscheme xcodelight
-else
+    set t_Co=256
     set background=dark
-    colorscheme xcodedark
-
+    colorscheme desert
+else
+    set t_Co=256
+    set background=dark
+    colorscheme vividchalk
 endif
 
 "========================================
@@ -55,23 +63,20 @@ let g:python_highlight_all = 1
 "========================================
 "=== COC.NVIM
 "========================================
-
-" Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#pum#visible() ? coc#pum#next(1):
+      \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-function! s:check_back_space() abort
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -112,7 +117,6 @@ au FileType python let b:coc_root_patterns = ['.git', '.env', 'venv', '.venv', '
 noremap <leader>f :Files<CR>
 noremap <leader>b :Buffers<CR>
 
-
 "========================================
 "==== Git Gutter
 "========================================
@@ -126,4 +130,5 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]
 "========================================
 "==== Vim-Fugitive
 "========================================
-noremap <leader>g :Git<CR>
+noremap <leader>g :0Git<CR>:normal gU<CR>
+set statusline=%<%f\ %{FugitiveStatusline()}\ %h%m%r%=%-14.(%l,%c%V%)\ %P
